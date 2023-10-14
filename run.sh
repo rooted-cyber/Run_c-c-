@@ -1,5 +1,33 @@
+crr() {
+cd ~/.c
+nano ab.c
+}
+crc() {
+random
+echo -e -n "\n Now edit your file ? y|n "
+read c
+case $c in
+y|Y)crr ;;
+n|N)exit ;;
+*)crc ;;
+esac
+}
+edc() {
+cd ~/.c
+if [ -e ab.c ];then
+random
+printf "\n Already created your file \n"
+random
+crc
+else
+cd ~/.c
+touch ab.c
+nano ab.c
+fi
+}
 chk() {
 cd ~/.c
+ls
 if [ -e ab.c ];then
 clang ab.c
 chmod 755 a.out
@@ -15,8 +43,7 @@ ccl() {
 cd ~
 mkdir .c
 cd .c
-touch ab.c
-nano ab.c
+edc
 }
 rcc() {
 chk
